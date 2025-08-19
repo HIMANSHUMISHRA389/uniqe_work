@@ -99,15 +99,15 @@ const HeroSection = () => {
   }, [slides]);
 
   // Optimized carousel timer with play/pause functionality
-  // useEffect(() => {
-  //   if (!isPlaying) return;
+  useEffect(() => {
+    if (!isPlaying) return;
     
-  //   const interval = setInterval(() => {
-  //     setActiveSlide((prev) => (prev + 1) % slides.length);
-  //   }, 5000);
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
     
-  //   return () => clearInterval(interval);
-  // }, [slides.length, isPlaying]);
+    return () => clearInterval(interval);
+  }, [slides.length, isPlaying]);
 
   // Memoized slide navigation function
   const goToSlide = useCallback((index) => {
