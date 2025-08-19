@@ -41,7 +41,7 @@ const Expertise = () => {
 
   return (
     <div className="bg-[#FDFFF9] py-16 px-4">
-      <div className="max-w-[94%] mx-auto">
+      <div className="max-w-[80%] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div
@@ -61,81 +61,109 @@ const Expertise = () => {
         </div>
 
         {/* Industries Grid - First Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mb-8 ">
           {industries.slice(0, 3).map((industry, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-lg p-18 shadow-sm transition-all duration-300 
-                         hover:shadow-2xl hover:scale-105 hover:-translate-y-2 cursor-pointer group overflow-hidden 
-                         opacity-50 hover:opacity-100 hover:bg-[#B1DB49] border-gray-200"
-            >
-              {/* Overlay for dark effect */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+            
 
-              {/* Image */}
-              <div className="rounded-lg h-40 mb-4 overflow-hidden relative">
-                <img
-                  src={industry.image}
-                  alt={industry.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+<div
+  key={index}
+  className="group relative bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer
+             overflow-hidden max-w-[90%] py-6
+             transition-transform duration-300 ease-out hover:scale-[1.03]"
+>
+  {/* Animated fill overlay (top -> bottom) */}
+  <span
+    aria-hidden
+    className="pointer-events-none absolute inset-0 rounded-xl bg-[#B1DB49]
+               origin-top scale-y-0 transition-transform duration-500 ease-out
+               will-change-transform group-hover:scale-y-100"
+  />
 
-              {/* Content */}
-              <div className="relative z-20">
-                <h3
-                  style={{ fontFamily: 'Inter' }}
-                  className="text-lg font-semibold mb-3 transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  {industry.title}
-                </h3>
-                <p
-                  style={{ fontFamily: 'Inter' }}
-                  className="text-sm leading-relaxed transition-transform duration-300 group-hover:translate-x-2"
-                >
-                  {industry.description}
-                </p>
-              </div>
-            </div>
+  {/* Inner content (stays above overlay) */}
+  <div className="relative z-10 h-full">
+    <div className="border-b rounded-xl border-gray-200 px-4 transition-colors duration-300 group-hover:border-transparent">
+      {/* Image (consistent height) */}
+      <div className="flex justify-center items-center h-40 mb-4">
+        <img
+          src={industry.image}
+          alt={industry.title}
+          className="object-contain h-full"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="min-h-[130px]">
+        <h3
+          style={{ fontFamily: 'Inter' }}
+          className="text-base font-medium text-gray-900 mb-2"
+        >
+          {industry.title}
+        </h3>
+        <p
+          style={{ fontFamily: 'Inter' }}
+          className="text-sm text-gray-600 leading-relaxed"
+        >
+          {industry.description}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
           ))}
         </div>
-{/* Industries Grid - Second Row */}
-         <div className="max-w-[64%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-14 mb-8 mx-auto">
+        {/* Industries Grid - Second Row */}
+        <div className="max-w-[64%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mb-8 mx-auto">
           {industries.slice(3, 5).map((industry, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-lg p-18 shadow-sm transition-all duration-300 
-                         hover:shadow-2xl hover:scale-105 hover:-translate-y-2 cursor-pointer group overflow-hidden 
-                         opacity-50 hover:opacity-100 hover:bg-[#B1DB49] border-gray-200"
-            >
-              {/* Overlay for dark effect */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+            
+              <div
+  key={index}
+  className="group relative bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer
+             overflow-hidden max-w-[90%] py-6
+             transition-transform duration-300 ease-out hover:scale-[1.03]"
+>
+  {/* Animated fill overlay (top -> bottom) */}
+  <span
+    aria-hidden
+    className="pointer-events-none absolute inset-0 rounded-xl bg-[#B1DB49]
+               origin-top scale-y-0 transition-transform duration-500 ease-out
+               will-change-transform group-hover:scale-y-100"
+  />
 
-              {/* Image */}
-              <div className="rounded-lg h-40 mb-4 overflow-hidden relative">
-                <img
-                  src={industry.image}
-                  alt={industry.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+  {/* Inner content (stays above overlay) */}
+  <div className="relative z-10 h-full">
+    <div className="border-b rounded-xl border-gray-200   px-4 transition-colors duration-300 group-hover:border-transparent">
+      {/* Image (consistent height) */}
+      <div className="flex justify-center items-center h-40 mb-4">
+        <img
+          src={industry.image}
+          alt={industry.title}
+          className="object-contain h-full"
+        />
+      </div>
 
-              {/* Content */}
-              <div className="relative z-20">
-                <h3
-                  style={{ fontFamily: 'Inter' }}
-                  className="text-lg font-semibold mb-3 transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  {industry.title}
-                </h3>
-                <p
-                  style={{ fontFamily: 'Inter' }}
-                  className="text-sm leading-relaxed transition-transform duration-300 group-hover:translate-x-2"
-                >
-                  {industry.description}
-                </p>
-              </div>
-            </div>
+      {/* Content */}
+      <div className="min-h-[130px]">
+        <h3
+          style={{ fontFamily: 'Inter' }}
+          className="text-base font-medium text-gray-900 mb-2"
+        >
+          {industry.title}
+        </h3>
+        <p
+          style={{ fontFamily: 'Inter' }}
+          className="text-sm text-gray-600 leading-relaxed"
+        >
+          {industry.description}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
           ))}
         </div>
       </div>
