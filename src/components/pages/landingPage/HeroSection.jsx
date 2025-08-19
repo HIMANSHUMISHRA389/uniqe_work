@@ -99,15 +99,15 @@ const HeroSection = () => {
   }, [slides]);
 
   // Optimized carousel timer with play/pause functionality
-  useEffect(() => {
-    if (!isPlaying) return;
+  // useEffect(() => {
+  //   if (!isPlaying) return;
     
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  //   const interval = setInterval(() => {
+  //     setActiveSlide((prev) => (prev + 1) % slides.length);
+  //   }, 5000);
     
-    return () => clearInterval(interval);
-  }, [slides.length, isPlaying]);
+  //   return () => clearInterval(interval);
+  // }, [slides.length, isPlaying]);
 
   // Memoized slide navigation function
   const goToSlide = useCallback((index) => {
@@ -230,7 +230,7 @@ const HeroSection = () => {
                   Series
                 </h3>
                 {/* Removed fixed height container to allow all cards to be visible */}
-                <div className="overflow-visible min-h-45" >
+                <div className="overflow-visible min-h-58" >
                   <div className="flex flex-wrap gap-1 sm:gap-2 md:gap-3 lg:gap-2 xl:gap-3">
                     {currentSlide.categories.map((category, index) => (
                       <div
