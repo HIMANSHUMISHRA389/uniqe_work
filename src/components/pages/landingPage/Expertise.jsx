@@ -41,7 +41,7 @@ const Expertise = () => {
 
   return (
     <div className="bg-[#FDFFF9] py-16 px-4">
-      <div className="max-w-[80%] mx-auto">
+      <div className="max-w-[84%] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div
@@ -68,20 +68,20 @@ const Expertise = () => {
 <div
   key={index}
   className="group relative bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer
-             overflow-hidden max-w-[90%] py-6
+             overflow-hidden max-w-[97%] py-6
              transition-transform duration-300 ease-out hover:scale-[1.03]"
 >
   {/* Animated fill overlay (top -> bottom) */}
   <span
     aria-hidden
     className="pointer-events-none absolute inset-0 rounded-xl bg-[#B1DB49]
-               origin-top scale-y-0 transition-transform duration-500 ease-out
+               origin-top scale-y-0 
                will-change-transform group-hover:scale-y-100"
   />
 
   {/* Inner content (stays above overlay) */}
   <div className="relative z-10 h-full">
-    <div className="border-b rounded-xl border-gray-200 px-4 transition-colors duration-300 group-hover:border-transparent">
+    <div className="border-b rounded-xl border-gray-200 px-4   group-hover:border-transparent">
       {/* Image (consistent height) */}
       <div className="flex justify-center items-center h-40 mb-4">
         <img
@@ -116,20 +116,20 @@ const Expertise = () => {
           ))}
         </div>
         {/* Industries Grid - Second Row */}
-        <div className="max-w-[64%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mb-8 mx-auto">
+        <div className="max-w-[72%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mb-8 mx-auto">
           {industries.slice(3, 5).map((industry, index) => (
             
               <div
   key={index}
   className="group relative bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer
-             overflow-hidden max-w-[90%] py-6
+             overflow-hidden max-w-[97%] py-6
              transition-transform duration-300 ease-out hover:scale-[1.03]"
 >
   {/* Animated fill overlay (top -> bottom) */}
   <span
     aria-hidden
     className="pointer-events-none absolute inset-0 rounded-xl bg-[#B1DB49]
-               origin-top scale-y-0 transition-transform duration-500 ease-out
+               origin-top scale-y-0 
                will-change-transform group-hover:scale-y-100"
   />
 
